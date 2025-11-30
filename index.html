@@ -2,55 +2,111 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GTA: San Andreas Style</title>
+    <title>GTA San Andreas - Welcome to Los Santos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
   </head>
-  <body class="font-bank">
-    <div class="scanlines"></div>
+  <body class="bg-zinc-900 text-white overflow-x-hidden">
     
-    <!-- HUD Top Right -->
-    <div class="fixed top-5 right-5 z-40 flex flex-col items-end gap-2 opacity-0" id="hud">
-      <div class="text-sa-green text-4xl drop-shadow-md">$00350420</div>
-      <div class="text-white text-2xl flex items-center gap-2">
-        <span>14:20</span>
-        <div class="w-24 h-4 bg-gray-800 border-2 border-gray-600 hud-bar">
-          <div class="w-3/4 h-full bg-red-600"></div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center mix-blend-difference text-white">
+      <div class="text-2xl font-gta text-gta-green tracking-widest">SAN ANDREAS</div>
+      <div class="hidden md:flex space-x-8 font-oswald uppercase tracking-wider">
+        <a href="#" class="hover:text-gta-green transition-colors">Story</a>
+        <a href="#" class="hover:text-gta-green transition-colors">Characters</a>
+        <a href="#" class="hover:text-gta-green transition-colors">Map</a>
+        <a href="#" class="hover:text-gta-green transition-colors">Radio</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=2076&auto=format&fit=crop" 
+          alt="Los Santos Background" 
+          class="w-full h-full object-cover opacity-60 scale-110 hero-bg"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-zinc-900"></div>
+      </div>
+      
+      <div class="relative z-10 text-center p-4">
+        <h2 class="text-2xl md:text-4xl font-oswald uppercase tracking-[0.5em] mb-4 hero-subtitle">Welcome to</h2>
+        <h1 class="text-6xl md:text-9xl font-gta text-white drop-shadow-lg hero-title">
+          LOS SANTOS
+        </h1>
+        <div class="mt-8 hero-cta opacity-0">
+          <button class="px-8 py-3 bg-gta-green text-black font-oswald font-bold text-xl uppercase tracking-wider hover:bg-white hover:scale-105 transition-all duration-300 clip-path-slant">
+            Start Game
+          </button>
         </div>
       </div>
-      <div class="text-sa-green text-xl">GROVE ST 4 LIFE</div>
-    </div>
+    </header>
 
-    <main class="relative min-h-screen flex flex-col items-center justify-center bg-spray">
-      
-      <!-- Logo Section -->
-      <div class="text-center z-10 mb-12 transform scale-0" id="logo">
-        <h2 class="text-5xl md:text-7xl text-white tracking-tighter gta-title">grand theft auto</h2>
-        <h1 class="text-6xl md:text-9xl font-gothic text-white mt-[-10px] md:mt-[-20px] drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
-          San Andreas
-        </h1>
+    <!-- Mission Passed Section -->
+    <section class="py-20 px-6 bg-zinc-900 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 content-left">
+          <h3 class="text-gta-orange font-gta text-5xl">GROVE STREET <br><span class="text-white">FOR LIFE</span></h3>
+          <p class="font-oswald text-gray-400 text-lg leading-relaxed">
+            Five years ago Carl Johnson escaped from the pressures of life in Los Santos, San Andreas... a city tearing itself apart with gang trouble, drugs and corruption. Where filmstars and millionaires do their best to avoid the dealers and gangbangers.
+          </p>
+          <div class="flex gap-4">
+            <div class="p-4 border border-gta-green/30 bg-gta-green/10 rounded">
+              <span class="block text-3xl font-gta text-gta-green">100+</span>
+              <span class="text-sm font-oswald uppercase text-gray-500">Missions</span>
+            </div>
+            <div class="p-4 border border-gta-green/30 bg-gta-green/10 rounded">
+              <span class="block text-3xl font-gta text-gta-green">3</span>
+              <span class="text-sm font-oswald uppercase text-gray-500">Major Cities</span>
+            </div>
+          </div>
+        </div>
+        <div class="relative content-right">
+          <div class="absolute -inset-4 bg-gta-green/20 blur-xl rounded-full"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1552160753-f92d7563380d?q=80&w=2069&auto=format&fit=crop" 
+            alt="Lowrider" 
+            class="relative rounded-lg shadow-2xl border-2 border-gta-green/50 grayscale hover:grayscale-0 transition-all duration-500"
+          />
+        </div>
       </div>
+    </section>
 
-      <!-- Menu -->
-      <div class="flex flex-col gap-4 text-2xl md:text-4xl text-sa-hud tracking-widest z-10" id="menu">
-        <button class="menu-item relative hover:text-sa-orange hover:scale-110 transition-all duration-200 text-left">START GAME</button>
-        <button class="menu-item relative hover:text-sa-orange hover:scale-110 transition-all duration-200 text-left">LOAD GAME</button>
-        <button class="menu-item relative hover:text-sa-orange hover:scale-110 transition-all duration-200 text-left">OPTIONS</button>
-        <button class="menu-item relative hover:text-sa-orange hover:scale-110 transition-all duration-200 text-left">QUIT GAME</button>
+    <!-- Gallery / Vibe -->
+    <section class="py-20 bg-black">
+      <div class="max-w-7xl mx-auto px-6">
+        <h3 class="text-4xl font-gta text-center mb-12 text-white">San Andreas <span class="text-gta-green">Life</span></h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="group relative h-80 overflow-hidden border border-zinc-800 gallery-item">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="City">
+            <div class="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
+              <span class="font-gta text-2xl text-gta-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300">Los Santos</span>
+            </div>
+          </div>
+          <div class="group relative h-80 overflow-hidden border border-zinc-800 gallery-item">
+            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Driving">
+            <div class="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
+              <span class="font-gta text-2xl text-gta-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300">San Fierro</span>
+            </div>
+          </div>
+          <div class="group relative h-80 overflow-hidden border border-zinc-800 gallery-item">
+            <img src="https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Desert">
+            <div class="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
+              <span class="font-gta text-2xl text-gta-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300">Las Venturas</span>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Character Quote -->
-      <div class="absolute bottom-10 text-center w-full px-4 opacity-0" id="quote">
-        <p class="text-sa-orange text-xl md:text-2xl italic font-sans">"Ah shit, here we go again."</p>
-        <p class="text-gray-500 text-sm mt-2">- CJ</p>
-      </div>
-
-      <!-- Background Elements -->
-      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-1/4 left-10 w-32 h-32 bg-sa-green blur-[100px] opacity-20"></div>
-        <div class="absolute bottom-1/4 right-10 w-40 h-40 bg-sa-orange blur-[100px] opacity-20"></div>
-      </div>
-
-    </main>
+    <!-- Footer -->
+    <footer class="bg-zinc-900 border-t border-zinc-800 py-8 text-center">
+      <p class="font-oswald text-gray-500 uppercase tracking-widest text-sm">© 2004-2023 Rockstar Games. All Rights Reserved.</p>
+    </footer>
 
     <script type="module" src="/main.js"></script>
   </body>
