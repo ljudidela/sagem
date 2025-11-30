@@ -7,17 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'sa-green': '#6ab04c',
-        'sa-dark': '#1e272e',
-        'sa-orange': '#f0932b',
-        'sa-hud': '#b2bec3'
+        'gta-green': '#2E8B57',
+        'gta-orange': '#FFA500',
       },
       fontFamily: {
-        'gothic': ['"UnifrakturMaguntia"', 'cursive'],
-        'bank': ['"Bowlby One SC"', 'sans-serif'],
-      },
-      backgroundImage: {
-        'spray': "radial-gradient(circle, rgba(106,176,76,0.2) 0%, rgba(0,0,0,1) 70%)"
+        'gta': ['"Diplomata SC"', 'serif'],
+        'oswald': ['"Oswald"', 'sans-serif'],
       }
     },
   },
