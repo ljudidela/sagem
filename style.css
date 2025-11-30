@@ -1,51 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=UnifrakturMaguntia&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-gta-black text-white overflow-x-hidden;
+  @apply bg-black text-white overflow-x-hidden;
 }
 
-.gta-text-shadow {
-  text-shadow: 2px 2px 0px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+.gta-title {
+  -webkit-text-stroke: 1px #000;
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.8);
 }
 
-.mission-passed {
-  color: #C4A000;
-  text-shadow: 0 0 10px #C4A000;
-  animation: pulse 2s infinite;
+.menu-item:hover::before {
+  content: '>';
+  position: absolute;
+  left: -20px;
+  color: #f0932b;
 }
 
-@keyframes pulse {
-  0% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
-  100% { opacity: 0.8; transform: scale(1); }
+.hud-bar {
+  box-shadow: 2px 2px 0px #000;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-}
-::-webkit-scrollbar-thumb {
-  background: #2E5E20;
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #3a7a2a;
+/* Scanline effect */
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0,0,0,0.2) 50%,
+    rgba(0,0,0,0.2)
+  );
+  background-size: 100% 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 50;
 }
