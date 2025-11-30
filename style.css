@@ -1,44 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=UnifrakturMaguntia&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .font-gta {
+    text-shadow: 2px 2px 0px #000;
+  }
+  
+  .clip-path-slant {
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
 body {
-  @apply bg-black text-white overflow-x-hidden;
+  background-color: #111;
 }
 
-.gta-title {
-  -webkit-text-stroke: 1px #000;
-  text-shadow: 4px 4px 0px rgba(0,0,0,0.8);
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
 }
-
-.menu-item:hover::before {
-  content: '>';
-  position: absolute;
-  left: -20px;
-  color: #f0932b;
+::-webkit-scrollbar-track {
+  background: #18181b;
 }
-
-.hud-bar {
-  box-shadow: 2px 2px 0px #000;
+::-webkit-scrollbar-thumb {
+  background: #2E8B57;
+  border-radius: 2px;
 }
-
-/* Scanline effect */
-.scanlines {
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0),
-    rgba(255,255,255,0) 50%,
-    rgba(0,0,0,0.2) 50%,
-    rgba(0,0,0,0.2)
-  );
-  background-size: 100% 4px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 50;
+::-webkit-scrollbar-thumb:hover {
+  background: #3cb371;
 }
