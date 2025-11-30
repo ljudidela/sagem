@@ -2,115 +2,56 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grand Theft Auto: San Andreas - Remastered Vibe</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>GTA: San Andreas Style</title>
   </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-sm border-b border-gta-green/30">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <div class="flex-shrink-0">
-            <span class="font-gta text-3xl text-white tracking-wider">San Andreas</span>
-          </div>
-          <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-8">
-              <a href="#" class="text-gray-300 hover:text-gta-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Story</a>
-              <a href="#" class="text-gray-300 hover:text-gta-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Characters</a>
-              <a href="#" class="text-gray-300 hover:text-gta-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Map</a>
-              <a href="#" class="bg-gta-green text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-green-700 transition-all">BUY NOW</a>
-            </div>
-          </div>
+  <body class="font-bank">
+    <div class="scanlines"></div>
+    
+    <!-- HUD Top Right -->
+    <div class="fixed top-5 right-5 z-40 flex flex-col items-end gap-2 opacity-0" id="hud">
+      <div class="text-sa-green text-4xl drop-shadow-md">$00350420</div>
+      <div class="text-white text-2xl flex items-center gap-2">
+        <span>14:20</span>
+        <div class="w-24 h-4 bg-gray-800 border-2 border-gray-600 hud-bar">
+          <div class="w-3/4 h-full bg-red-600"></div>
         </div>
       </div>
-    </nav>
+      <div class="text-sa-green text-xl">GROVE ST 4 LIFE</div>
+    </div>
 
-    <!-- Hero Section -->
-    <div class="relative h-screen bg-hero-pattern bg-cover bg-center bg-no-repeat flex items-center justify-center">
-      <div class="text-center px-4">
-        <h2 class="text-gta-orange font-gta text-2xl md:text-4xl mb-4 animate-bounce">Welcome to Los Santos</h2>
-        <h1 class="text-6xl md:text-9xl font-gta text-white mb-8 gta-text-shadow tracking-widest uppercase">
-          Grand Theft Auto
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-200 mb-10 font-sans max-w-2xl mx-auto">
-          "Ah shit, here we go again."
-        </p>
-        <button id="cta-btn" class="bg-transparent border-2 border-white text-white font-gta text-2xl px-8 py-4 hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
-          JOIN THE FAMILY
-        </button>
-      </div>
+    <main class="relative min-h-screen flex flex-col items-center justify-center bg-spray">
       
-      <!-- Decorative HUD Elements -->
-      <div class="absolute top-24 right-10 w-32 h-16 bg-black/50 border-2 border-white/20 rounded p-2 hidden md:block">
-        <div class="text-gta-green font-bold text-right">$ 350,000</div>
-        <div class="h-2 w-full bg-gray-700 mt-2 rounded-full overflow-hidden">
-          <div class="h-full bg-red-600 w-3/4"></div>
-        </div>
+      <!-- Logo Section -->
+      <div class="text-center z-10 mb-12 transform scale-0" id="logo">
+        <h2 class="text-5xl md:text-7xl text-white tracking-tighter gta-title">grand theft auto</h2>
+        <h1 class="text-6xl md:text-9xl font-gothic text-white mt-[-10px] md:mt-[-20px] drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+          San Andreas
+        </h1>
       </div>
-    </div>
 
-    <!-- Features Section -->
-    <div class="py-24 bg-zinc-900">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 reveal">
-          <h2 class="text-gta-green font-gta text-5xl mb-4">Groove Street 4 Life</h2>
-          <p class="text-gray-400">Explore the hood, defend your turf, and rise to the top.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <!-- Card 1 -->
-          <div class="bg-black border border-zinc-800 p-6 rounded-lg hover:border-gta-green transition-colors duration-300 reveal">
-            <div class="h-48 bg-zinc-800 mb-6 rounded overflow-hidden">
-               <img src="https://images.unsplash.com/photo-1552160753-117159821e01?q=80&w=800&auto=format&fit=crop" alt="Lowrider" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-            </div>
-            <h3 class="text-2xl font-gta text-white mb-2">Lowriders</h3>
-            <p class="text-gray-400">Customize your ride with hydraulics and bounce through the streets of Los Santos.</p>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="bg-black border border-zinc-800 p-6 rounded-lg hover:border-gta-green transition-colors duration-300 reveal" style="transition-delay: 100ms;">
-            <div class="h-48 bg-zinc-800 mb-6 rounded overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1628519592419-672fd6c26661?q=80&w=800&auto=format&fit=crop" alt="Spray" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-            </div>
-            <h3 class="text-2xl font-gta text-white mb-2">Turf Wars</h3>
-            <p class="text-gray-400">Tag up the neighborhood and take back what is yours from the Ballas.</p>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="bg-black border border-zinc-800 p-6 rounded-lg hover:border-gta-green transition-colors duration-300 reveal" style="transition-delay: 200ms;">
-            <div class="h-48 bg-zinc-800 mb-6 rounded overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1566207474742-de921626ad0c?q=80&w=800&auto=format&fit=crop" alt="Jet" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-            </div>
-            <h3 class="text-2xl font-gta text-white mb-2">No Limits</h3>
-            <p class="text-gray-400">Fly jets, steal tanks, and cause absolute chaos across the state.</p>
-          </div>
-        </div>
+      <!-- Menu -->
+      <div class="flex flex-col gap-4 text-2xl md:text-4xl text-sa-hud tracking-widest z-10" id="menu">
+        <button class="menu-item relative hover:text-sa-orange hover:scale-110 transition-all duration-200 text-left">START GAME</button>
+        <button class="menu-item relative hover:text-sa-orange hover:scale-110 transition-all duration-200 text-left">LOAD GAME</button>
+        <button class="menu-item relative hover:text-sa-orange hover:scale-110 transition-all duration-200 text-left">OPTIONS</button>
+        <button class="menu-item relative hover:text-sa-orange hover:scale-110 transition-all duration-200 text-left">QUIT GAME</button>
       </div>
-    </div>
 
-    <!-- Quote Section -->
-    <div class="py-20 bg-gta-green relative overflow-hidden">
-      <div class="absolute inset-0 bg-black/20"></div>
-      <div class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal">
-        <h2 class="text-4xl md:text-6xl font-gta text-white mb-6">"I'll have two number 9s, a number 9 large..."</h2>
-        <p class="text-xl font-bold text-black">- Big Smoke</p>
+      <!-- Character Quote -->
+      <div class="absolute bottom-10 text-center w-full px-4 opacity-0" id="quote">
+        <p class="text-sa-orange text-xl md:text-2xl italic font-sans">"Ah shit, here we go again."</p>
+        <p class="text-gray-500 text-sm mt-2">- CJ</p>
       </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="bg-black py-10 border-t border-zinc-800">
-      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-4 md:mb-0">
-          <span class="font-gta text-2xl text-white">San Andreas</span>
-        </div>
-        <div class="text-gray-500 text-sm">
-          &copy; 2004-2023 Rockstar Games Tribute. Not affiliated.
-        </div>
+      <!-- Background Elements -->
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-10 w-32 h-32 bg-sa-green blur-[100px] opacity-20"></div>
+        <div class="absolute bottom-1/4 right-10 w-40 h-40 bg-sa-orange blur-[100px] opacity-20"></div>
       </div>
-    </footer>
 
-    <script type="module" src="./main.js"></script>
+    </main>
+
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
