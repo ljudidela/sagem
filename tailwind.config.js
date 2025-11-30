@@ -2,21 +2,22 @@
 export default {
   content: [
     "./index.html",
-    "./*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        'gta-green': '#2E5E20',
-        'gta-orange': '#F4A460',
-        'gta-black': '#0a0a0a',
+        'sa-green': '#6ab04c',
+        'sa-dark': '#1e272e',
+        'sa-orange': '#f0932b',
+        'sa-hud': '#b2bec3'
       },
       fontFamily: {
-        'gta': ['"UnifrakturMaguntia"', 'cursive'],
-        'sans': ['"Inter"', 'sans-serif'],
+        'gothic': ['"UnifrakturMaguntia"', 'cursive'],
+        'bank': ['"Bowlby One SC"', 'sans-serif'],
       },
       backgroundImage: {
-        'hero-pattern': "linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1605218427368-35b0f996d916?q=80&w=2670&auto=format&fit=crop')",
+        'spray': "radial-gradient(circle, rgba(106,176,76,0.2) 0%, rgba(0,0,0,1) 70%)"
       }
     },
   },
