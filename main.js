@@ -1,56 +1,67 @@
-import './style.css'
-import gsap from 'gsap'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Sound effect simulation (visual only)
-const playHover = () => {
-  // Placeholder for sound logic
-  console.log('bip');
-};
+gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const tl = gsap.timeline();
+// Hero Animation
+const tl = gsap.timeline();
 
-  // Logo Animation (Zoom in + Fade)
-  tl.to('#logo', {
-    scale: 1,
-    duration: 1.5,
-    ease: 'elastic.out(1, 0.5)'
-  })
-  
-  // HUD Slide in
-  .to('#hud', {
-    opacity: 1,
-    x: 0,
-    duration: 0.8,
-    ease: 'power2.out'
-  }, '-=1')
+tl.to('.hero-bg', {
+  scale: 1,
+  duration: 2,
+  ease: 'power2.out'
+})
+.from('.hero-subtitle', {
+  y: 20,
+  opacity: 0,
+  duration: 0.8,
+  ease: 'power3.out'
+}, '-=1.5')
+.from('.hero-title', {
+  scale: 0.8,
+  opacity: 0,
+  duration: 1,
+  ease: 'elastic.out(1, 0.5)'
+}, '-=1')
+.to('.hero-cta', {
+  opacity: 1,
+  y: 0,
+  duration: 0.5
+}, '-=0.5');
 
-  // Menu Items Stagger
-  .from('.menu-item', {
-    x: -50,
-    opacity: 0,
-    stagger: 0.1,
-    duration: 0.5,
-    ease: 'back.out(1.7)'
-  }, '-=0.5')
+// Scroll Animations
+gsap.from('.content-left', {
+  scrollTrigger: {
+    trigger: '.content-left',
+    start: 'top 80%',
+  },
+  x: -100,
+  opacity: 0,
+  duration: 1,
+  ease: 'power3.out'
+});
 
-  // Quote Fade in
-  .to('#quote', {
-    opacity: 1,
-    y: -10,
-    duration: 1,
-    delay: 0.5
-  });
+gsap.from('.content-right', {
+  scrollTrigger: {
+    trigger: '.content-right',
+    start: 'top 80%',
+  },
+  x: 100,
+  opacity: 0,
+  duration: 1,
+  ease: 'power3.out',
+  delay: 0.2
+});
 
-  // Interactive Hover Effects
-  const menuItems = document.querySelectorAll('.menu-item');
-  menuItems.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      playHover();
-      gsap.to(item, { x: 10, duration: 0.2 });
-    });
-    item.addEventListener('mouseleave', () => {
-      gsap.to(item, { x: 0, duration: 0.2 });
-    });
-  });
+// Gallery Stagger
+gsap.from('.gallery-item', {
+  scrollTrigger: {
+    trigger: '.gallery-item',
+    start: 'top 85%',
+  },
+  y: 50,
+  opacity: 0,
+  duration: 0.8,
+  stagger: 0.2,
+  ease: 'power2.out'
 });
