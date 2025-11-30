@@ -2,110 +2,89 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GTA San Andreas - Welcome to Los Santos</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <title>GTA San Andreas - Welcome Home</title>
   </head>
-  <body class="bg-zinc-900 text-white overflow-x-hidden">
+  <body>
+    <div class="scanlines"></div>
     
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center mix-blend-difference text-white">
-      <div class="text-2xl font-gta text-gta-green tracking-widest">SAN ANDREAS</div>
-      <div class="hidden md:flex space-x-8 font-oswald uppercase tracking-wider">
-        <a href="#" class="hover:text-gta-green transition-colors">Story</a>
-        <a href="#" class="hover:text-gta-green transition-colors">Characters</a>
-        <a href="#" class="hover:text-gta-green transition-colors">Map</a>
-        <a href="#" class="hover:text-gta-green transition-colors">Radio</a>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=2076&auto=format&fit=crop" 
-          alt="Los Santos Background" 
-          class="w-full h-full object-cover opacity-60 scale-110 hero-bg"
-        />
-        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-zinc-900"></div>
-      </div>
-      
-      <div class="relative z-10 text-center p-4">
-        <h2 class="text-2xl md:text-4xl font-oswald uppercase tracking-[0.5em] mb-4 hero-subtitle">Welcome to</h2>
-        <h1 class="text-6xl md:text-9xl font-gta text-white drop-shadow-lg hero-title">
-          LOS SANTOS
-        </h1>
-        <div class="mt-8 hero-cta opacity-0">
-          <button class="px-8 py-3 bg-gta-green text-black font-oswald font-bold text-xl uppercase tracking-wider hover:bg-white hover:scale-105 transition-all duration-300 clip-path-slant">
-            Start Game
-          </button>
-        </div>
+    <!-- HUD Header -->
+    <header class="fixed top-0 right-0 p-6 z-40 flex flex-col items-end gap-2 font-gta text-gta-green">
+      <div class="text-3xl gta-text-stroke">$00354219</div>
+      <div class="flex gap-2 text-xl">
+        <span class="text-white">20:42</span>
+        <span class="gta-text-stroke">WEAPON 12-7</span>
       </div>
     </header>
 
-    <!-- Mission Passed Section -->
-    <section class="py-20 px-6 bg-zinc-900 relative overflow-hidden">
-      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6 content-left">
-          <h3 class="text-gta-orange font-gta text-5xl">GROVE STREET <br><span class="text-white">FOR LIFE</span></h3>
-          <p class="font-oswald text-gray-400 text-lg leading-relaxed">
-            Five years ago Carl Johnson escaped from the pressures of life in Los Santos, San Andreas... a city tearing itself apart with gang trouble, drugs and corruption. Where filmstars and millionaires do their best to avoid the dealers and gangbangers.
-          </p>
-          <div class="flex gap-4">
-            <div class="p-4 border border-gta-green/30 bg-gta-green/10 rounded">
-              <span class="block text-3xl font-gta text-gta-green">100+</span>
-              <span class="text-sm font-oswald uppercase text-gray-500">Missions</span>
-            </div>
-            <div class="p-4 border border-gta-green/30 bg-gta-green/10 rounded">
-              <span class="block text-3xl font-gta text-gta-green">3</span>
-              <span class="text-sm font-oswald uppercase text-gray-500">Major Cities</span>
-            </div>
-          </div>
-        </div>
-        <div class="relative content-right">
-          <div class="absolute -inset-4 bg-gta-green/20 blur-xl rounded-full"></div>
-          <img 
-            src="https://images.unsplash.com/photo-1552160753-f92d7563380d?q=80&w=2069&auto=format&fit=crop" 
-            alt="Lowrider" 
-            class="relative rounded-lg shadow-2xl border-2 border-gta-green/50 grayscale hover:grayscale-0 transition-all duration-500"
-          />
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop" alt="Los Santos" class="w-full h-full object-cover opacity-40 grayscale hover:grayscale-0 transition-all duration-1000" />
+        <div class="absolute inset-0 bg-gradient-to-t from-gta-black via-transparent to-transparent"></div>
+      </div>
+      
+      <div class="relative z-10 text-center">
+        <h2 class="text-2xl md:text-4xl font-marker text-white mb-4 opacity-0 hero-subtitle">Ah shit, here we go again.</h2>
+        <h1 class="text-6xl md:text-9xl font-gta text-white gta-text-stroke opacity-0 hero-title">
+          <span class="text-gta-green">SAN</span> ANDREAS
+        </h1>
+        <div class="mt-8 opacity-0 hero-btn">
+          <button class="bg-gta-green text-black font-bold py-3 px-8 rounded border-2 border-white hover:bg-white hover:text-gta-green transition-colors font-gta text-xl">
+            ENTER THE HOOD
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Gallery / Vibe -->
-    <section class="py-20 bg-black">
-      <div class="max-w-7xl mx-auto px-6">
-        <h3 class="text-4xl font-gta text-center mb-12 text-white">San Andreas <span class="text-gta-green">Life</span></h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="group relative h-80 overflow-hidden border border-zinc-800 gallery-item">
-            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="City">
-            <div class="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
-              <span class="font-gta text-2xl text-gta-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300">Los Santos</span>
-            </div>
+    <!-- Stats Section -->
+    <section class="py-20 px-6 bg-gta-gray">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 stats-container">
+          <h3 class="text-4xl font-gta text-white mb-8">CJ'S STATS</h3>
+          
+          <div class="space-y-1">
+            <div class="flex justify-between font-bold text-sm uppercase tracking-wider">Respect</div>
+            <div class="hud-stats-bar"><div class="hud-stats-fill" style="width: 15%"></div></div>
           </div>
-          <div class="group relative h-80 overflow-hidden border border-zinc-800 gallery-item">
-            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Driving">
-            <div class="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
-              <span class="font-gta text-2xl text-gta-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300">San Fierro</span>
-            </div>
+          
+          <div class="space-y-1">
+            <div class="flex justify-between font-bold text-sm uppercase tracking-wider">Stamina</div>
+            <div class="hud-stats-bar"><div class="hud-stats-fill" style="width: 60%"></div></div>
           </div>
-          <div class="group relative h-80 overflow-hidden border border-zinc-800 gallery-item">
-            <img src="https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Desert">
-            <div class="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
-              <span class="font-gta text-2xl text-gta-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300">Las Venturas</span>
-            </div>
+
+          <div class="space-y-1">
+            <div class="flex justify-between font-bold text-sm uppercase tracking-wider">Muscle</div>
+            <div class="hud-stats-bar"><div class="hud-stats-fill" style="width: 85%"></div></div>
           </div>
+
+          <div class="space-y-1">
+            <div class="flex justify-between font-bold text-sm uppercase tracking-wider">Fat</div>
+            <div class="hud-stats-bar"><div class="hud-stats-fill" style="width: 5%"></div></div>
+          </div>
+        </div>
+        
+        <div class="relative">
+           <div class="border-4 border-white p-2 rotate-2 hover:rotate-0 transition-transform duration-500">
+             <img src="https://images.unsplash.com/photo-1580227974556-1f490096f33d?q=80&w=1000&auto=format&fit=crop" alt="Lowrider" class="w-full h-auto grayscale contrast-125" />
+           </div>
+           <div class="absolute -bottom-6 -right-6 bg-gta-green text-black font-marker text-2xl p-4 rotate-[-5deg]">
+             GROVE 4 LIFE
+           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-zinc-900 border-t border-zinc-800 py-8 text-center">
-      <p class="font-oswald text-gray-500 uppercase tracking-widest text-sm">© 2004-2023 Rockstar Games. All Rights Reserved.</p>
+    <!-- Mission Passed Overlay (Hidden by default) -->
+    <div id="mission-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 opacity-0 pointer-events-none">
+      <div class="text-center">
+        <h2 class="text-6xl md:text-8xl font-gta text-gta-orange mission-passed mb-4 scale-50">MISSION PASSED!</h2>
+        <p class="text-white font-gta text-2xl">RESPECT +</p>
+      </div>
+    </div>
+
+    <footer class="bg-black py-8 text-center font-marker text-gray-500">
+      <p>&copy; 1992-2023 GROVE STREET FAMILIES. ALL RIGHTS RESERVED.</p>
     </footer>
 
     <script type="module" src="/main.js"></script>
